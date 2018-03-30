@@ -30,7 +30,7 @@
     mysql_query("set names utf8");
  
     //通过php进行insert操作
-    $sqlinsert="insert into t1(name,class,id,email,org,usn,pwd) values('{$name}','{$class}','{$id}','{$email}','{$org}','{$usn}','{$pwd}')";
+    $sqlinsert="insert into t1(name,class,id,email,org,usn,pwd) values('$name','$class','$id','$email','$org','$usn','$pwd')";
  
     //通过php进行select操作
     $sqlselect="select * from t1 order by id";
