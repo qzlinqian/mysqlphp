@@ -1,8 +1,6 @@
-<p>我们会尽快处理您的请求并将反馈结果发送至您的邮箱，请耐心等待，谢谢！</p>
-
 <?php
     header("content-type:text/html;charset=utf-8");
- 
+ <p>我们会尽快处理您的请求并将反馈结果发送至您的邮箱，请耐心等待，谢谢！</p>
     //开启session
     session_start();
      
