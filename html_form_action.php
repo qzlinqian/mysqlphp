@@ -16,36 +16,24 @@
     $pwd=$_POST['pwd'];
      
 	//通过php连接到mysql数据库
-    $conn=mysql_connect('localhost','root','Lqa072072');
-    if($conn){
-		echo "<br/>连接成功" . "<br/>";
-		} else{
-		echo "<br/>连接失败" . mysql_error();
-		}
+	$connection = mysql_connect('localhost','root','Lqa072072') or die("Unable to connect!"); 
+	//选择数据库 
+	mysql_select_db("test") or die("Unable to select database!"); 
 	echo "我们会尽快处理您的请求并将反馈结果发送至您的邮箱，请耐心等待，谢谢！";
-    //选择数据库
-    mysql_select_db('test');
- 
 	//设置客户端和连接字符集
     mysql_query("set names utf8");
  
     //通过php进行insert操作
-    $sqlinsert="insert into t1(name,class,id,email,org,usn,pwd) values('$name','$class','$id','$email','$org','$usn','$pwd')";
- 
-    //通过php进行select操作
-    $sqlselect="select * from t1 order by id";
+    $sqlinsert="INSERT INTO t1(name,class,id,email,org,usn,pwd) VALUE('$name','$class','$id','$email','$org','$usn','$pwd')";
  
     //添加用户信息到数据库
-    mysql_query($sqlinsert);
-             
-    //返回用户信息字符集
-    $result=mysql_query($sqlselect);
+    $result = mysql_query($sqlinsert) or die("Error in query: $query. ".mysql_error());
 
 	echo "您的用户名是：" . $usn . "<br>";
 	echo "您的密码是：" . $pwd . "<br>";
 	
     //释放连接资源
-    mysql_close($conn);
+    mysql_close($connection);
 ?>
 
 </body>
