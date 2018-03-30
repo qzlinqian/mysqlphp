@@ -24,7 +24,7 @@
     mysql_query("set names utf8");
  
     //通过php进行insert操作
-    $sqlinsert="INSERT INTO t1(name,class,id,email,org,usn,pwd) VALUE('$name','$class','$id','$email','$org','$usn','$pwd')";
+    $sqlinsert="INSERT INTO inf(name,class,id,email,org,usn,pwd) VALUE('$name','$class','$id','$email','$org','$usn','$pwd')";
  
     //添加用户信息到数据库
     $result = mysql_query($sqlinsert) or die("Error in query: $query. ".mysql_error());
