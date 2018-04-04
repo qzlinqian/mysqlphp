@@ -16,7 +16,7 @@
     $pwd=$_POST['pwd'];
      
 	//通过php连接到mysql数据库
-	$connection = mysql_connect('localhost','root','Lqa072072') or die("Unable to connect!"); 
+	$connection = mysql_connect('localhost','root','password') or die("Unable to connect!"); 
 	//选择数据库 
 	mysql_select_db("test") or die("Unable to select database!"); 
 	echo "我们会尽快处理您的请求并将反馈结果发送至您的邮箱，请耐心等待，谢谢！";
